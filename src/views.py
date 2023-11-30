@@ -1,15 +1,16 @@
 # import os
 #
 import json
+import os
 
 import requests
 
 from settings import OPEN_JSON
 
 
-# from dotenv import load_dotenv
-#
-# load_dotenv()
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 
@@ -50,18 +51,17 @@ def open_json_stocks(path):
 
 def get_stocks(data_stocks):
     for stock in data_stocks:
-        url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock}&apikey=demo'
+        url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock}&apikey=N64DYQB2WV5QR1WW'
         r = requests.get(url)
         data = r.json()
         print(data['Global Quote']['01. symbol'], data['Global Quote']['05. price'])
 
 def get_currencies(data_currencies):
     for currencie in data_currencies:
-        url = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=JPY&apikey=demo'
+        url = f'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency={currencie}&to_currency=RUB&apikey=N64DYQB2WV5QR1WW'
         r = requests.get(url)
         data = r.json()
-
-        print(data['Realtime Currency Exchange Rate']['1. From_Currency Code'], data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
+        print(data)
 
 
 
