@@ -13,20 +13,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-
-
-# url = "https://api.apilayer.com/exchangerates_data/timeseries/EUR,USD?start_date=2020-10-01&end_date=2020-10-10"
-#
-# payload = {}
-# headers= {
-#   "apikey": os.getenv("API_KEY_EXCHANGE")
-# }
-#
-# response = requests.request("GET", url, headers=headers, data = payload)
-#
-# status_code = response.status_code
-# result = response.text
-# print(result)
 def open_json_currencies(path):
     """
     Открывает json файл
@@ -65,7 +51,7 @@ def get_currencies(data_currencies):
 
 
 
-data_ = open_json_currencies(OPEN_JSON)
-get_currencies(data_)
-# data = open_json_stocks(OPEN_JSON)
-# get_stocks(data)
+# data_ = open_json_currencies(OPEN_JSON)
+# get_currencies(data_)
+data = open_json_stocks(OPEN_JSON)
+get_stocks(data)

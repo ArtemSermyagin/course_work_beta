@@ -17,29 +17,6 @@ def transactions_xlsx_open(path):
     except ValueError:
         return "Ошибка чтения файла excel"
 
-# def transactions_xlsx_open(path):
-#     """
-#     Функция считывает файлы Excel и сохраняет их в формате JSON
-#     :param path: путь к файлу Excel
-#     :return: словарь, содержащий данные из файла
-#     """
-#     try:
-#         # Считывание файла Excel
-#         transactions_excel = pd.read_excel(path)
-#         data_dict = transactions_excel.to_dict("records")
-#         print(data_dict)
-#         # Запись данных в JSON файл
-#         json_path = "../data/operations.json"
-#         print(json_path)
-#         with open(json_path, "w", encoding='windows-1251') as json_file:
-#             json.dump(data_dict, json_file, indent=4, ensure_ascii=False)
-#         print(data_dict)
-#         return data_dict
-#
-#     except ValueError:
-#         return "Ошибка чтения файла Excel"
-
-
 
 def get_last_digits(trans_dict):
     list_card = []
