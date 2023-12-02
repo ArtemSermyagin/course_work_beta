@@ -5,21 +5,21 @@ from settings import OPEN_XLS, OPEN_JSON
 import pandas as pd
 
 from src.log import log_utils
-from views import get_stocks, get_currencies
+from src.views import get_stocks, get_currencies
 
 log_1 = log_utils()
 
 def get_greeting():
     current_hour = datetime.now().hour
     log_1.info("Дата запуска get_greeting()")
-    if current_hour < 6:
-        return "Доброй ночи"
-    elif current_hour < 12:
-        return "Доброе утро"
-    elif current_hour < 18:
-        return "Добрый день"
+    if current_hour >= 0 and current_hour <= 4:
+        return "Доброй ночи!"
+    elif current_hour > 4 and current_hour <= 12:
+        return "Доброе утро!"
+    elif current_hour > 12 and current_hour <= 16:
+        return "Добрый день!"
     else:
-        return "Добрый вечер"
+        return "Добрый вечер!"
 
 
 def transactions_xlsx_open():
@@ -100,6 +100,6 @@ def collect_response():
         "currency_rates": get_currencies(open_json(OPEN_JSON, 'user_currencies')),
         "stock_prices": get_stocks(open_json(OPEN_JSON, 'user_stocks'))
     }
-#
-# result = collect_response()
-# print(json.dumps(result, indent=4, ensure_ascii=False))
+
+result = collect_response()
+print(json.dumps(result, indent=4, ensure_ascii=False))

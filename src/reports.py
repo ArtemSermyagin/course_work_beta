@@ -33,5 +33,5 @@ def spending_by_category(
     return result.to_json(orient='records', indent=4, force_ascii=False)
 
 
-# print(spending_by_category(dataFrame, 'Фастфуд', '31.12.2021'))
+print(spending_by_category(dataFrame, 'Фастфуд', '31.12.2018'))
 
