@@ -10,7 +10,7 @@ if __name__ == "__main__":
     print(json.dumps(result, indent=4, ensure_ascii=False))
 
     dataFrame = transactions_xlsx_open()
-    result_reposts = spending_by_category(dataFrame, 'Фастфуд', '25.03.2018')
+    result_reposts = spending_by_category(dataFrame, "Фастфуд", "25.03.2018")
     print(result_reposts)
 
     file_path = OPEN_XLS  # Путь к файлу Excel

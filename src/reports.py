@@ -2,6 +2,7 @@
 from typing import Optional
 
 import pandas as pd
+
 # from pandas import Series
 
 from src.log import log_utils
