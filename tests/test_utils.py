@@ -2,7 +2,7 @@
 import pandas as pd
 import pytest
 from freezegun import freeze_time
-from src.utils import get_greeting, transactions_xlsx_open, collect_response
+from src.utils import collect_response, get_greeting, transactions_xlsx_open
 
 # from src.views import get_stocks
 

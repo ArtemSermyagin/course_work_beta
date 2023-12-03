@@ -1,13 +1,22 @@
-import pandas as pd
 import json
+from typing import Any
 
+import pandas as pd
 from settings import OPEN_XLS
+
 from src.log import log_utils
 
 log_1 = log_utils()
 
 
-def search_transactions(file_path, query):
+def search_transactions(file_path: Any, query: str) -> Any:
+    """
+    Функция принимает файл и запрос из описания, потом ищет транзакции
+    согласно запрашиваемых данных
+    :param file_path: Путь до файла
+    :param query: Запрос
+    :return: json-ответ со всеми транзакциями
+    """
     df = pd.read_excel(file_path)  # Загрузка файла Excel в DataFrame
 
     filtered_df = df[

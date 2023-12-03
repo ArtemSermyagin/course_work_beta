@@ -1,5 +1,5 @@
-from src.services import search_transactions
 from settings import OPEN_XLS
+from src.services import search_transactions
 
 file_path = OPEN_XLS
 

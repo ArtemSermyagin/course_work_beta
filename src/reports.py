@@ -3,10 +3,11 @@ from typing import Optional
 
 import pandas as pd
 
-# from pandas import Series
-
 from src.log import log_utils
 from src.utils import transactions_xlsx_open
+
+# from pandas import Series
+
 
 dataFrame = transactions_xlsx_open()
 # dataFrame = pd.read_excel("../tests/test_operations.xls")
@@ -15,8 +16,15 @@ log_1 = log_utils()
 
 
 def spending_by_category(
-    transactions: pd.DataFrame, category: str, date: Optional[str] = None
-) -> pd.DataFrame:
+    transactions: pd.DataFrame, category: str, date: str
+) -> str:
+    """
+    Функция возвращает траты по заданной категории за последние 3 месяца (от переданной даты).
+    :param transactions: Датафрейм с транзакциями
+    :param category: Название категории
+    :param date: Опциональная дата
+    :return: json
+    """
     start_date = pd.to_datetime(date, format="%d.%m.%Y", dayfirst=True)
     log_1.info("Преобразуем задаваему дату в формат даты")
     transactions["Дата операции"] = pd.to_datetime(

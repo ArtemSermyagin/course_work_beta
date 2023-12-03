@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from src.views import get_stocks, get_currencies
+from src.views import get_currencies, get_stocks
 
 
 class GetStocksTestCase(unittest.TestCase):

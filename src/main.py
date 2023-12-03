@@ -1,6 +1,7 @@
 import json
 
 from settings import OPEN_XLS
+
 from src.reports import spending_by_category
 from src.services import search_transactions
 from src.utils import collect_response, transactions_xlsx_open
